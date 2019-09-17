@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './config/ReactotronConfig';
+
 import Header from './components/Header';
 import Books from './components/Books';
 
