@@ -24,7 +24,7 @@ const Books = () => {
 					everything you need right here.
 				</h2>
 			</div>
-			<div className="container" style={{ marginTop: 40 }}>
+			<div className="container" style={{ marginTop: 80 }}>
 				{shelve.map(item => (
 					<Box
 						key={item.isbn}

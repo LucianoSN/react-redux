@@ -3,23 +3,20 @@ import PropTypes from 'prop-types';
 
 const Box = ({ title, isbn, thumb }) => {
 	return (
-		<div className="box">
-			<article className="media">
-				<div className="media-left">
+		<>
+			<div className="columns is-mobile">
+				<div className="column is-one-fifth">
 					<figure className="image is-64x64">
 						<img src={thumb} alt="picture" />
 					</figure>
 				</div>
-				<div className="media-content">
-					<div className="content">
-						<div>
-							<strong>{title}</strong>
-							<p>ISBN: {isbn}</p>
-						</div>
-					</div>
+				<div className="column">
+					<strong>{title}</strong>
+					<p>ISBN: {isbn}</p>
 				</div>
-			</article>
-		</div>
+			</div>
+			<hr />
+		</>
 	);
 };
 
