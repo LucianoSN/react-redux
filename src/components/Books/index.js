@@ -20,8 +20,8 @@ const Books = () => {
 			<div className="container">
 				<h1 className="title">Trending Now</h1>
 				<h2 className="subtitle">
-					Looking for Fiction & Literature eBooks? You'll find
-					everything you need right here.
+					Looking for Tech eBooks? You'll find everything you need
+					right here.
 				</h2>
 			</div>
 			<div className="container" style={{ marginTop: 80 }}>
@@ -31,6 +31,7 @@ const Books = () => {
 						title={item.title}
 						isbn={item.isbn}
 						thumb={item.thumbnailUrl}
+						stock={item.stock}
 					/>
 				))}
 			</div>

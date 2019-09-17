@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Box = ({ title, isbn, thumb }) => {
+const Box = ({ title, isbn, thumb, stock }) => {
 	return (
 		<>
 			<div className="columns is-mobile">
@@ -13,6 +13,7 @@ const Box = ({ title, isbn, thumb }) => {
 				<div className="column">
 					<strong>{title}</strong>
 					<p>ISBN: {isbn}</p>
+					<p>Total: {stock}</p>
 				</div>
 			</div>
 			<hr />
@@ -24,6 +25,7 @@ Box.propTypes = {
 	title: PropTypes.string.isRequired,
 	isbn: PropTypes.string.isRequired,
 	thumb: PropTypes.string.isRequired,
+	stock: PropTypes.number.isRequired,
 };
 
 export default Box;

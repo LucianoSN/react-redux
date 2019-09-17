@@ -3,42 +3,50 @@
 		{
 			"title": "Unlocking Android",
 			"isbn": "1933988673",
-			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg"
+			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg",
+			"stock": 39
 		},
 		{
 			"title": "Android in Action, Second Edition",
 			"isbn": "1935182722",
-			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson2.jpg"
+			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson2.jpg",
+			"stock": 12
 		},
 		{
 			"title": "Specification by Example",
 			"isbn": "1617290084",
-			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/adzic.jpg"
+			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/adzic.jpg",
+			"stock": 9
 		},
 		{
 			"title": "Flex 3 in Action",
 			"isbn": "1933988746",
-			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ahmed.jpg"
+			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ahmed.jpg",
+			"stock": 4
 		},
 		{
 			"title": "Flex 4 in Action",
 			"isbn": "1935182420",
-			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ahmed2.jpg"
+			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ahmed2.jpg",
+			"stock": 23
 		},
 		{
 			"title": "Collective Intelligence in Action",
 			"isbn": "1933988312",
-			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/alag.jpg"
+			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/alag.jpg",
+			"stock": 65
 		},
 		{
 			"title": "Zend Framework in Action",
 			"isbn": "1933988320",
-			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/allen.jpg"
+			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/allen.jpg",
+			"stock": 1
 		},
 		{
 			"title": "Flex on Java",
 			"isbn": "1933988797",
-			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/allmon.jpg"
+			"thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/allmon.jpg",
+			"stock": 15
 		}
 	]
 }
