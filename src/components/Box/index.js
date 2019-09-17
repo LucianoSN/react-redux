@@ -15,6 +15,10 @@ const Box = ({ title, isbn, thumb, stock }) => {
 					<p>ISBN: {isbn}</p>
 					<p>Total: {stock}</p>
 				</div>
+				<div className="column">
+					<button className="button is-small">+</button>
+					<button className="button is-small">-</button>
+				</div>
 			</div>
 			<hr />
 		</>
