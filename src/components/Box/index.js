@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Box = ({ title, shortDescription, thumb }) => {
+const Box = ({ title, isbn, thumb }) => {
 	return (
 		<div className="box">
 			<article className="media">
@@ -12,10 +12,10 @@ const Box = ({ title, shortDescription, thumb }) => {
 				</div>
 				<div className="media-content">
 					<div className="content">
-						<p>
+						<div>
 							<strong>{title}</strong>
-							{shortDescription}
-						</p>
+							<p>ISBN: {isbn}</p>
+						</div>
 					</div>
 				</div>
 			</article>
@@ -25,7 +25,7 @@ const Box = ({ title, shortDescription, thumb }) => {
 
 Box.propTypes = {
 	title: PropTypes.string.isRequired,
-	shortDescription: PropTypes.string.isRequired,
+	isbn: PropTypes.string.isRequired,
 	thumb: PropTypes.string.isRequired,
 };
 

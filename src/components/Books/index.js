@@ -4,12 +4,12 @@ import Box from '../Box';
 import api from '../../services/api';
 
 const Books = () => {
-	const [books, setBooks] = useState([]);
+	const [shelve, setShelve] = useState([]);
 
 	useEffect(() => {
 		async function loadBooks() {
 			const response = await api.get('books');
-			setBooks(response.data);
+			setShelve(response.data);
 		}
 
 		loadBooks();
@@ -25,13 +25,14 @@ const Books = () => {
 				</h2>
 			</div>
 			<div className="container" style={{ marginTop: 40 }}>
-				{/*{books.map(book => {*/}
-				{/*	<Box*/}
-				{/*		title={book.title}*/}
-				{/*		shortDescription={book.shortDescription}*/}
-				{/*		thumb={book.thumbnailUrl}*/}
-				{/*	/>;*/}
-				{/*})}*/}
+				{shelve.map(item => (
+					<Box
+						key={item.isbn}
+						title={item.title}
+						isbn={item.isbn}
+						thumb={item.thumbnailUrl}
+					/>
+				))}
 			</div>
 		</section>
 	);
