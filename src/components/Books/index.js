@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Box from '../Box';
-import api from '../../services/api';
+
+import { loadRequest } from '../../store/modules/books/actions';
 
 const Books = () => {
-	const [shelve, setShelve] = useState([]);
+	const dispatch = useDispatch();
+	const loading = useSelector(state => state.books.loading);
+	const books = useSelector(state => state.books.shelve);
 
 	useEffect(() => {
-		async function loadBooks() {
-			const response = await api.get('books');
-			setShelve(response.data);
-		}
-
-		loadBooks();
-	}, []);
+		dispatch(loadRequest());
+	}, [dispatch]);
 
 	return (
 		<section className="section">
@@ -25,15 +24,16 @@ const Books = () => {
 				</h2>
 			</div>
 			<div className="container" style={{ marginTop: 80 }}>
-				{shelve.map(item => (
-					<Box
-						key={item.isbn}
-						title={item.title}
-						isbn={item.isbn}
-						thumb={item.thumbnailUrl}
-						stock={item.stock}
-					/>
-				))}
+				{!loading &&
+					books.map(item => (
+						<Box
+							key={item.isbn}
+							title={item.title}
+							isbn={item.isbn}
+							thumb={item.thumbnailUrl}
+							stock={item.stock}
+						/>
+					))}
 			</div>
 		</section>
 	);
