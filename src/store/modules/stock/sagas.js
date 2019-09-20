@@ -5,10 +5,6 @@ import * as actionBooks from '../books/actions';
 
 import { actionStockTypes } from '../../../helpers/enums';
 
-const getIndex = (shelve, isbn) => {
-	return shelve.findIndex(e => e.isbn === isbn);
-};
-
 const getBook = (shelve, index, operation) => {
 	return { ...shelve[index], stock: operation(shelve[index].stock) };
 };
@@ -19,7 +15,7 @@ const getStock = (shelve, operation) => {
 
 const adjust = (payload, operation) => {
 	const { shelve, isbn } = payload;
-	const index = getIndex(shelve, isbn);
+	const index = shelve.findIndex(e => e.isbn === isbn);
 
 	return {
 		index,
