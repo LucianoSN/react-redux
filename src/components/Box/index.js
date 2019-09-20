@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Box = ({ title, isbn, thumb, stock }) => {
+const Box = ({ title, isbn, thumb, stock, increment, decrement }) => {
 	return (
 		<>
 			<div className="columns is-mobile">
@@ -16,8 +16,20 @@ const Box = ({ title, isbn, thumb, stock }) => {
 					<p>Total: {stock}</p>
 				</div>
 				<div className="column">
-					<button className="button is-small">+</button>
-					<button className="button is-small">-</button>
+					<button
+						type="button"
+						className="button is-small"
+						onClick={() => increment(isbn)}
+					>
+						+
+					</button>
+					<button
+						type="button"
+						className="button is-small"
+						onClick={() => decrement(isbn)}
+					>
+						-
+					</button>
 				</div>
 			</div>
 			<hr />
@@ -30,6 +42,8 @@ Box.propTypes = {
 	isbn: PropTypes.string.isRequired,
 	thumb: PropTypes.string.isRequired,
 	stock: PropTypes.number.isRequired,
+	increment: PropTypes.func.isRequired,
+	decrement: PropTypes.func.isRequired,
 };
 
 export default Box;

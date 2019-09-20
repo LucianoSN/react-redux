@@ -14,6 +14,12 @@ const Books = () => {
 		dispatch(loadRequest());
 	}, [dispatch]);
 
+	const incrementHandler = isbn => {
+		console.tron.log(isbn);
+	};
+
+	const decrementHanlder = () => {};
+
 	return (
 		<section className="section">
 			<div className="container">
@@ -32,6 +38,8 @@ const Books = () => {
 							isbn={item.isbn}
 							thumb={item.thumbnailUrl}
 							stock={item.stock}
+							increment={incrementHandler}
+							decrement={decrementHanlder}
 						/>
 					))}
 			</div>
