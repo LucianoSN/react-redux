@@ -15,12 +15,16 @@ const getStock = (shelve, operation) => {
 
 const adjust = (payload, operation) => {
 	const { shelve, isbn } = payload;
+
 	const index = shelve.findIndex(e => e.isbn === isbn);
+
+	const book = getBook(shelve, index, operation);
+	const stock = getStock(shelve, operation);
 
 	return {
 		index,
-		book: getBook(shelve, index, operation),
-		stock: getStock(shelve, operation),
+		book,
+		stock,
 	};
 };
 
