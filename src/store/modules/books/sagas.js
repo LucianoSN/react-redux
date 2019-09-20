@@ -17,7 +17,7 @@ function* loadBooks() {
 		yield put(actionBooks.loadSuccess(shelve));
 		yield put(actionStocks.loadStock(stock));
 	} catch (e) {
-		yield put(actionStocks.failureStock());
+		yield put(actionBooks.loadFailure());
 	}
 }
 
