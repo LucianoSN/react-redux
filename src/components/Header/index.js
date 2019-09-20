@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-	const stock = useSelector(state => state.books.stock);
+	const stock = useSelector(state => state.stock.total);
 	return (
 		<div id="header">
 			<section className="hero is-dark">

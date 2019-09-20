@@ -3,7 +3,6 @@ import { actionBookTypes } from '../../../helpers/enums';
 
 const INITIAL_STATE = {
 	loading: false,
-	stock: null,
 	shelve: [],
 };
 
@@ -17,7 +16,6 @@ const books = (state = INITIAL_STATE, action) => {
 			case actionBookTypes.LOAD_SUCCESS: {
 				draft.loading = false;
 				draft.shelve = action.payload.shelve;
-				draft.stock = action.payload.stock;
 				break;
 			}
 			case actionBookTypes.LOAD_FAILURE: {

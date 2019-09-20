@@ -15,10 +15,12 @@ const Books = () => {
 	}, [dispatch]);
 
 	const incrementHandler = isbn => {
-		console.tron.log(isbn);
+		console.tron.log('INCREMENT', isbn);
 	};
 
-	const decrementHanlder = () => {};
+	const decrementHandler = isbn => {
+		console.tron.log('DECREMENT', isbn);
+	};
 
 	return (
 		<section className="section">
@@ -39,7 +41,7 @@ const Books = () => {
 							thumb={item.thumbnailUrl}
 							stock={item.stock}
 							increment={incrementHandler}
-							decrement={decrementHanlder}
+							decrement={decrementHandler}
 						/>
 					))}
 			</div>

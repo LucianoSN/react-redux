@@ -5,6 +5,8 @@ import api from '../../../services/api';
 import { loadSuccess, loadFailure } from './actions';
 import { actionBookTypes } from '../../../helpers/enums';
 
+import { loadStock } from '../stock/actions';
+
 export function* loadBooks() {
 	try {
 		const response = yield call(api.get, 'books');
@@ -13,6 +15,7 @@ export function* loadBooks() {
 		const stock = shelve.reduce((total, item) => total + item.stock, 0);
 
 		yield put(loadSuccess(shelve, stock));
+		yield put(loadStock(stock));
 	} catch (e) {
 		yield put(loadFailure());
 	}

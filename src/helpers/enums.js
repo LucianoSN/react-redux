@@ -4,4 +4,11 @@ const actionBookTypes = {
 	LOAD_FAILURE: 'LOAD_FAILURE',
 };
 
-export { actionBookTypes };
+const actionStockTypes = {
+	LOAD_STOCK: 'LOAD_STOCK',
+	INSERT_FROM_STOCK: 'INSERT_FROM_STOCK',
+	REMOVE_FROM_STOCK: 'REMOVE_FROM_STOCK',
+	FAILURE_STOCK: 'FAILURE_STOCK',
+};
+
+export { actionBookTypes, actionStockTypes };
