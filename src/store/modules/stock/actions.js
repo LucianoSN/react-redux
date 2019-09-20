@@ -7,16 +7,16 @@ export function loadStock(stock) {
 	};
 }
 
-export function insertStock(shelve, isbn) {
+export function incrementStock(shelve, isbn) {
 	return {
-		type: actionStockTypes.INSERT_FROM_STOCK,
+		type: actionStockTypes.INCREMENT,
 		payload: { shelve, isbn },
 	};
 }
 
-export function removeStock() {
+export function decrementStock() {
 	return {
-		type: actionStockTypes.REMOVE_FROM_STOCK,
+		type: actionStockTypes.DECREMENT,
 	};
 }
 

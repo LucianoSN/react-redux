@@ -13,6 +13,13 @@ export function loadSuccess(shelve) {
 	};
 }
 
+export function update(index, book) {
+	return {
+		type: actionBookTypes.UPDATE,
+		payload: { index, book },
+	};
+}
+
 export function loadFailure() {
 	return {
 		type: actionBookTypes.LOAD_FAILURE,

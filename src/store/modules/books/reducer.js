@@ -18,6 +18,10 @@ const books = (state = INITIAL_STATE, action) => {
 				draft.shelve = action.payload.shelve;
 				break;
 			}
+			case actionBookTypes.UPDATE: {
+				draft.shelve[action.payload.index] = action.payload.book;
+				break;
+			}
 			case actionBookTypes.LOAD_FAILURE: {
 				draft.loading = false;
 				break;
