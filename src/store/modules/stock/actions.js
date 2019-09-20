@@ -14,9 +14,10 @@ export function incrementStock(shelve, isbn) {
 	};
 }
 
-export function decrementStock() {
+export function decrementStock(shelve, isbn) {
 	return {
 		type: actionStockTypes.DECREMENT,
+		payload: { shelve, isbn },
 	};
 }
 

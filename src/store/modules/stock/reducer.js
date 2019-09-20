@@ -11,10 +11,6 @@ const stock = (state = INITIAL_STATE, action) => {
 			case actionStockTypes.LOAD_STOCK:
 				draft.total = action.payload.stock;
 				break;
-			case actionStockTypes.INCREMENT:
-				break;
-			case actionStockTypes.DECREMENT:
-				break;
 			case actionStockTypes.FAILURE_STOCK:
 				break;
 			default:

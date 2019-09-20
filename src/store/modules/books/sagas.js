@@ -2,10 +2,10 @@ import { takeLatest, call, put, all } from 'redux-saga/effects';
 
 import api from '../../../services/api';
 
-import { loadSuccess, loadFailure } from './actions';
-import { actionBookTypes } from '../../../helpers/enums';
+import * as actionBooks from './actions';
+import * as actionStocks from '../stock/actions';
 
-import { loadStock } from '../stock/actions';
+import { actionBookTypes } from '../../../helpers/enums';
 
 function* loadBooks() {
 	try {
@@ -14,10 +14,10 @@ function* loadBooks() {
 
 		const stock = shelve.reduce((total, item) => total + item.stock, 0);
 
-		yield put(loadSuccess(shelve));
-		yield put(loadStock(stock));
+		yield put(actionBooks.loadSuccess(shelve));
+		yield put(actionStocks.loadStock(stock));
 	} catch (e) {
-		yield put(loadFailure());
+		yield put(actionStocks.failureStock());
 	}
 }
 

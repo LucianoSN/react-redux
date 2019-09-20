@@ -9,16 +9,35 @@ function* increment({ payload }) {
 	try {
 		const { shelve, isbn } = payload;
 
-		// const index = shelve.map(e => e.isbn).indexOf(isbn);
 		const index = shelve.findIndex(e => e.isbn === isbn);
-		const total = shelve[index].stock + 1;
+		const book = { ...shelve[index], stock: shelve[index].stock + 1 };
 
-		const book = { ...shelve[index], stock: total };
+		const stock = shelve.reduce((total, item) => total + item.stock, 0) + 1;
 
 		yield put(actionBooks.update(index, book));
+		yield put(actionStocks.loadStock(stock));
 	} catch (e) {
 		yield put(actionStocks.failureStock());
 	}
 }
 
-export default all([takeLatest(actionStockTypes.INCREMENT, increment)]);
+function* decrement({ payload }) {
+	try {
+		const { shelve, isbn } = payload;
+
+		const index = shelve.map(e => e.isbn).indexOf(isbn);
+		const book = { ...shelve[index], stock: shelve[index].stock - 1 };
+
+		const stock = shelve.reduce((total, item) => total + item.stock, 0) - 1;
+
+		yield put(actionBooks.update(index, book));
+		yield put(actionStocks.loadStock(stock));
+	} catch (e) {
+		yield put(actionStocks.failureStock());
+	}
+}
+
+export default all([
+	takeLatest(actionStockTypes.INCREMENT, increment),
+	takeLatest(actionStockTypes.DECREMENT, decrement),
+]);

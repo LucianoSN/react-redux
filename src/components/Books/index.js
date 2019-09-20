@@ -21,7 +21,7 @@ const Books = () => {
 	};
 
 	const decrementHandler = isbn => {
-		console.tron.log('DECREMENT', isbn);
+		dispatch(stock.decrementStock(shelve, isbn));
 	};
 
 	return (
