@@ -29,9 +29,9 @@ function* increment({ payload }) {
 		const { index, book, stock } = adjust(payload, value => value + 1);
 
 		yield put(actionBooks.update(index, book));
-		yield put(actionStocks.loadStock(stock));
+		yield put(actionStocks.load(stock));
 	} catch (e) {
-		yield put(actionStocks.failureStock());
+		yield put(actionStocks.failure());
 	}
 }
 
@@ -40,9 +40,9 @@ function* decrement({ payload }) {
 		const { index, book, stock } = adjust(payload, value => value - 1);
 
 		yield put(actionBooks.update(index, book));
-		yield put(actionStocks.loadStock(stock));
+		yield put(actionStocks.load(stock));
 	} catch (e) {
-		yield put(actionStocks.failureStock());
+		yield put(actionStocks.failure());
 	}
 }
 

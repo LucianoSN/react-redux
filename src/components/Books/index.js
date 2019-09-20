@@ -17,11 +17,11 @@ const Books = () => {
 	}, [dispatch]);
 
 	const incrementHandler = isbn => {
-		dispatch(stock.incrementStock(shelve, isbn));
+		dispatch(stock.increment(shelve, isbn));
 	};
 
 	const decrementHandler = isbn => {
-		dispatch(stock.decrementStock(shelve, isbn));
+		dispatch(stock.decrement(shelve, isbn));
 	};
 
 	return (

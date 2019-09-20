@@ -23,7 +23,7 @@ const books = (state = INITIAL_STATE, action) => {
 				draft.shelve[action.payload.index] = action.payload.book;
 				break;
 			}
-			case actionBookTypes.LOAD_FAILURE: {
+			case actionBookTypes.FAILURE: {
 				draft.loading = false;
 				break;
 			}

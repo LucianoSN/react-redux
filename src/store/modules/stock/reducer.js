@@ -8,10 +8,10 @@ const INITIAL_STATE = {
 const stock = (state = INITIAL_STATE, action) => {
 	return produce(state, draft => {
 		switch (action.type) {
-			case actionStockTypes.LOAD_STOCK:
+			case actionStockTypes.LOAD:
 				draft.total = action.payload.stock;
 				break;
-			case actionStockTypes.FAILURE_STOCK:
+			case actionStockTypes.FAILURE:
 				break;
 			default:
 		}

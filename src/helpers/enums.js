@@ -1,15 +1,15 @@
 const actionBookTypes = {
 	LOAD_REQUEST: 'LOAD_REQUEST',
 	LOAD_SUCCESS: 'LOAD_SUCCESS',
-	LOAD_FAILURE: 'LOAD_FAILURE',
 	UPDATE: 'UPDATE',
+	FAILURE: 'FAILURE',
 };
 
 const actionStockTypes = {
-	LOAD_STOCK: 'LOAD_STOCK',
+	LOAD: 'LOAD',
 	INCREMENT: 'INCREMENT',
 	DECREMENT: 'DECREMENT',
-	FAILURE_STOCK: 'FAILURE_STOCK',
+	FAILURE: 'FAILURE',
 };
 
 export { actionBookTypes, actionStockTypes };

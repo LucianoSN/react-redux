@@ -20,8 +20,8 @@ export function update(index, book) {
 	};
 }
 
-export function loadFailure() {
+export function failure() {
 	return {
-		type: actionBookTypes.LOAD_FAILURE,
+		type: actionBookTypes.FAILURE,
 	};
 }
