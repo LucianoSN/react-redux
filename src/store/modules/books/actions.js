@@ -6,10 +6,10 @@ export function loadRequest() {
 	};
 }
 
-export function loadSuccess(shelve) {
+export function loadSuccess(shelve, stock) {
 	return {
 		type: actionBookTypes.LOAD_SUCCESS,
-		payload: { shelve },
+		payload: { shelve, stock },
 	};
 }
 

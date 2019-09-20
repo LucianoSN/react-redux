@@ -8,7 +8,11 @@ import { actionBookTypes } from '../../../helpers/enums';
 export function* loadBooks() {
 	try {
 		const response = yield call(api.get, 'books');
-		yield put(loadSuccess(response.data));
+		const shelve = response.data;
+
+		const stock = shelve.reduce((total, item) => total + item.stock, 0);
+
+		yield put(loadSuccess(shelve, stock));
 	} catch (e) {
 		yield put(loadFailure());
 	}

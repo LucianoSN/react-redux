@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+	const stock = useSelector(state => state.books.stock);
 	return (
 		<div id="header">
 			<section className="hero is-dark">
@@ -13,7 +15,7 @@ const Header = () => {
 							className="title is-1 has-text-warning"
 							style={{ marginTop: 30 }}
 						>
-							Stock: 9
+							Stock: {stock}
 						</div>
 					</div>
 				</div>
