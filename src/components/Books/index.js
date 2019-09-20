@@ -3,19 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Box from '../Box';
 
-import { loadRequest } from '../../store/modules/books/actions';
+import * as books from '../../store/modules/books/actions';
+import * as stock from '../../store/modules/stock/actions';
 
 const Books = () => {
 	const dispatch = useDispatch();
+
 	const loading = useSelector(state => state.books.loading);
-	const books = useSelector(state => state.books.shelve);
+	const shelve = useSelector(state => state.books.shelve);
 
 	useEffect(() => {
-		dispatch(loadRequest());
+		dispatch(books.loadRequest());
 	}, [dispatch]);
 
 	const incrementHandler = isbn => {
-		console.tron.log('INCREMENT', isbn);
+		dispatch(stock.insertStock(shelve, isbn));
 	};
 
 	const decrementHandler = isbn => {
@@ -33,13 +35,13 @@ const Books = () => {
 			</div>
 			<div className="container" style={{ marginTop: 80 }}>
 				{!loading &&
-					books.map(item => (
+					shelve.map(book => (
 						<Box
-							key={item.isbn}
-							title={item.title}
-							isbn={item.isbn}
-							thumb={item.thumbnailUrl}
-							stock={item.stock}
+							key={book.isbn}
+							title={book.title}
+							isbn={book.isbn}
+							thumb={book.thumbnailUrl}
+							stock={book.stock}
 							increment={incrementHandler}
 							decrement={decrementHandler}
 						/>

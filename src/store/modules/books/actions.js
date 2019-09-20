@@ -6,7 +6,7 @@ export function loadRequest() {
 	};
 }
 
-export function loadSuccess(shelve, stock) {
+export function loadSuccess(shelve) {
 	return {
 		type: actionBookTypes.LOAD_SUCCESS,
 		payload: { shelve },

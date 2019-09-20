@@ -7,9 +7,10 @@ export function loadStock(stock) {
 	};
 }
 
-export function insertStock() {
+export function insertStock(shelve, isbn) {
 	return {
 		type: actionStockTypes.INSERT_FROM_STOCK,
+		payload: { shelve, isbn },
 	};
 }
 

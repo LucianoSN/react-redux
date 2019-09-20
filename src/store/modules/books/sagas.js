@@ -7,14 +7,14 @@ import { actionBookTypes } from '../../../helpers/enums';
 
 import { loadStock } from '../stock/actions';
 
-export function* loadBooks() {
+function* loadBooks() {
 	try {
 		const response = yield call(api.get, 'books');
 		const shelve = response.data;
 
 		const stock = shelve.reduce((total, item) => total + item.stock, 0);
 
-		yield put(loadSuccess(shelve, stock));
+		yield put(loadSuccess(shelve));
 		yield put(loadStock(stock));
 	} catch (e) {
 		yield put(loadFailure());

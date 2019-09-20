@@ -1,11 +1,11 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 
-import { loadStock, insertStock, removeStock, failureStock } from './actions';
+import { insertStock, failureStock } from './actions';
 import { actionStockTypes } from '../../../helpers/enums';
 
-export function* insert() {
+function* insert({ payload }) {
 	try {
-		console.tron.log('INSERT STOCK');
+		const { shelve, isbn } = payload;
 	} catch (e) {
 		yield put(failureStock());
 	}
